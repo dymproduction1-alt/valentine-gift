@@ -6,13 +6,14 @@
     <title>Book.ua | З 14 лютого</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
 
     <div class="card">
         <div class="icon">☕📖</div>
         <h1>Зі святом, колего!</h1>
-        <p>Введи своє ім'я, щоб Book.ua сказав щось приємне:</p>
+        <p>Введи своє ім'я для привітання:</p>
         
         <div class="input-area">
             <input type="text" id="nameInput" placeholder="Твоє ім'я...">
@@ -21,6 +22,11 @@
 
         <div id="wishDisplay" class="wish-text"></div>
     </div>
+
+    <footer>
+        <p>Зроблено з ❤️ для команди <strong>Book.ua на ВДНГ</strong></p>
+        <p>© 2026 | DYM production</p>
+    </footer>
 
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
