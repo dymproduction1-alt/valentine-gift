@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book.ua | З 14 лютого</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="card">
+        <div class="icon">☕📖</div>
+        <h1>Зі святом, колего!</h1>
+        <p>Введи своє ім'я, щоб Book.ua сказав щось приємне:</p>
+        
+        <div class="input-area">
+            <input type="text" id="nameInput" placeholder="Твоє ім'я...">
+            <button onclick="getWish()">Дізнатись</button>
+        </div>
+
+        <div id="wishDisplay" class="wish-text"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
