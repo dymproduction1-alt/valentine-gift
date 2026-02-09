@@ -1,4 +1,3 @@
-// Функція для запуску сердечок
 function launchHearts() {
     const duration = 3 * 1000;
     const end = Date.now() + duration;
@@ -9,16 +8,14 @@ function launchHearts() {
             angle: 60,
             spread: 55,
             origin: { x: 0 },
-            colors: ['#ff0000', '#ff69b4'],
-            shapes: ['circle'] // Можна додати кастомні фігури, але коло + кольори вже дають ефект
+            colors: ['#ff0000', '#ff69b4']
         });
         confetti({
             particleCount: 3,
             angle: 120,
             spread: 55,
             origin: { x: 1 },
-            colors: ['#ff0000', '#ff69b4'],
-            shapes: ['circle']
+            colors: ['#ff0000', '#ff69b4']
         });
 
         if (Date.now() < end) {
@@ -41,7 +38,6 @@ async function getWish() {
         const response = await fetch(`/api/greeting/${encodeURIComponent(name)}`);
         const data = await response.json();
         
-        // Запускаємо ефект сердечок!
         launchHearts();
 
         display.style.opacity = 0;
@@ -57,7 +53,6 @@ async function getWish() {
     }
 }
 
-// Обробка Enter
 document.getElementById('nameInput').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         getWish();
