@@ -1,10 +1,13 @@
+/* Додай це в кінець свого файлу style.css */
+
 body {
     background: linear-gradient(135deg, #fdf5e6 0%, #faedcd 100%);
     font-family: 'Comfortaa', cursive;
     display: flex;
+    flex-direction: column; /* Щоб футер був знизу */
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
 }
 
@@ -17,68 +20,27 @@ body {
     max-width: 450px;
     width: 90%;
     border: 2px solid #e8e0d5;
-    transition: transform 0.3s ease;
+    z-index: 1; /* Картка поверх фону */
 }
 
-.card:hover {
-    transform: translateY(-5px);
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #8b735b;
+    font-size: 0.9rem;
 }
 
+footer strong {
+    color: #6f4e37;
+}
+
+footer p {
+    margin: 5px 0;
+    opacity: 0.8;
+}
+
+/* Стилі для кави та книг у фоні (опціонально для краси) */
 .icon {
     font-size: 60px;
     margin-bottom: 20px;
-    display: block;
-}
-
-h1 {
-    color: #6f4e37;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
-
-.input-area {
-    margin: 30px 0;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-input {
-    padding: 15px;
-    border: 2px solid #d4a373;
-    border-radius: 15px;
-    width: 60%;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-input:focus {
-    border-color: #6f4e37;
-}
-
-button {
-    padding: 15px 20px;
-    background: #6f4e37;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
-}
-
-button:hover {
-    background: #bc6c25;
-    box-shadow: 0 5px 15px rgba(111, 78, 55, 0.3);
-}
-
-.wish-text {
-    margin-top: 30px;
-    color: #4a3728;
-    font-size: 1.2rem;
-    line-height: 1.5;
-    min-height: 80px;
-    font-weight: 400;
-    transition: opacity 0.4s ease;
 }
