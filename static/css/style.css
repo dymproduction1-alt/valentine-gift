@@ -1,11 +1,26 @@
 body {
-    background: linear-gradient(135deg, #fdf5e6 0%, #faedcd 100%);
+    background: #fdf5e6;
     font-family: 'Comfortaa', cursive;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0;
+    overflow-x: hidden;
+}
+
+/* Кнопка музики */
+.music-control {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    background: rgba(111, 78, 55, 0.1);
+    padding: 5px 10px;
+    border-radius: 20px;
+    color: #6f4e37;
 }
 
 .card {
@@ -17,60 +32,34 @@ body {
     max-width: 450px;
     width: 90%;
     border: 2px solid #e8e0d5;
-    transition: transform 0.3s ease;
+    position: relative;
+    z-index: 2;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.icon {
-    font-size: 60px;
-    margin-bottom: 20px;
-    display: block;
-}
-
-h1 {
-    color: #6f4e37;
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-}
-
-.input-area {
-    margin: 30px 0;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-}
-
-input {
-    padding: 15px;
-    border: 2px solid #d4a373;
-    border-radius: 15px;
-    width: 60%;
-    font-size: 16px;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-input:focus {
-    border-color: #6f4e37;
-}
-
-button {
-    padding: 15px 20px;
-    background: #6f4e37;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s;
-}
-
-button:hover {
+/* Кнопка поділитися */
+#shareBtn {
+    margin-top: 20px;
     background: #bc6c25;
-    box-shadow: 0 5px 15px rgba(111, 78, 55, 0.3);
+    font-size: 0.8rem;
+    padding: 10px 15px;
+}
+
+/* Анімація сердечок на фоні */
+@keyframes heartFloat {
+    0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+    50% { opacity: 0.6; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+.bg-heart {
+    position: fixed;
+    bottom: -10%;
+    color: #ff85a2;
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    z-index: 1;
+    animation: heartFloat linear infinite;
 }
 
 .wish-text {
@@ -79,6 +68,5 @@ button:hover {
     font-size: 1.2rem;
     line-height: 1.5;
     min-height: 80px;
-    font-weight: 400;
     transition: opacity 0.4s ease;
 }
